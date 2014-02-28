@@ -1,0 +1,21 @@
+@(topicList: List[models.Topic])
+
+<ul>
+	@for(topic <- topicList) {
+	  <li><a href="/topics/@topic.getId()">@topic.getName()</a>
+		  <form action="/topics/delete" method="get">
+		  		<input type="hidden" name="id" value=@topic.getId() />
+		  		<input type="submit" value="X"/>
+		  </form>
+	  </li>
+	} 
+</ul>
+
+
+<form action="/topics" method="post">
+	<ul>
+		<li>Topic : <input type="text" name="name" /></li>
+		<li>Url : <input type="text" name="url" /></li>
+		<li><input type="submit" /></li>
+	</ul>
+</form>

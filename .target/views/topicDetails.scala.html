@@ -1,0 +1,18 @@
+@(bookList: List[models.Book],topic:models.Topic)
+
+<h1>
+@topic.getName()
+</h1>
+
+<br/>
+
+	@for(book <- bookList) {
+	  <div>
+	  <a href="@book.getLink()">
+		 <img src="@book.getBigImage()" title="@book.getTitle()"/>
+		</a>
+	  </div>
+
+	} 
+
+
